@@ -1,1 +1,18 @@
-
+AWS services are listed below.
+Service	What you should understand
+EC2	Compute, AMIs, instance types, EBS, security groups, user data, Auto Scaling
+S3	Buckets, objects, IAM, versioning, lifecycle, encryption, replication, static hosting
+RDS	MySQL/PostgreSQL, Multi-AZ, backups, snapshots, read replicas
+DynamoDB	NoSQL, partition keys, sort keys, indexes, capacity modes
+VPC	Subnets, route tables, IGW, NAT Gateway, NACL, Security Groups
+IAM	Users, groups, roles, policies, STS, least privilege
+Lambda	Serverless functions, triggers, permissions, layers, concurrency
+API Gateway	REST/HTTP APIs, authentication, throttling, integrations
+CloudFront	CDN, caching, origins, distributions, invalidation
+SQS	Queues, producers/consumers, visibility timeout, DLQ
+SNS	Pub/sub, notifications, fan-out
+CloudWatch	Metrics, logs, alarms, dashboards, log insights
+CloudTrail	AWS API auditing and security investigation
+CloudFormation	Infrastructure as Code
+EKS	Managed Kubernetes on AWS
+Step Functions	Orchestrating multi-step workflows
