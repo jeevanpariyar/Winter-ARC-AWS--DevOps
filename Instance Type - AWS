@@ -1,0 +1,83 @@
+This is a major AWS DevOps concept.
+
+7. 💰 Reserved Instances
+
+Reserved Instances are basically a longer-term pricing commitment for eligible EC2 usage.
+
+Instead of paying the normal flexible rate, you commit to a term and can get a discount.
+
+Think:
+
+On-demand
+= Pay normally
+
+Reserved
+= Commit longer
+= Lower effective cost
+
+Useful when you know you'll need capacity for a long time.
+
+8. Spot Requests
+
+Spot Instance = Cheap EC2 capacity using spare AWS capacity.
+
+You can get a large discount, but AWS can interrupt the instance when it needs the capacity back.
+
+Good for:
+
+Batch processing
+Testing
+Data processing
+Temporary workloads
+
+Not ideal for:
+
+Critical production database
+9. Savings Plans
+
+Another way to reduce AWS compute costs by committing to a certain level of usage/spend.
+
+Simple idea:
+
+Commit to AWS usage
+        ↓
+Get discounted pricing
+
+Savings Plans are broader/flexible compared with traditional Reserved Instances.
+
+10. Dedicated Hosts
+
+A Dedicated Host = Physical AWS server dedicated to you.
+
+Normally:
+
+Physical Server
+ ├── Customer A
+ ├── Customer B
+ └── Customer C
+
+Dedicated Host:
+
+Physical Server
+       |
+       └── YOUR workloads
+
+Used when you have specific licensing/compliance requirements.
+
+11. Capacity Reservations
+
+This reserves EC2 capacity in a specific Availability Zone.
+
+Example:
+
+You need to guarantee that you can launch:
+
+5 EC2 instances
+
+AWS reserves capacity for you.
+
+Important distinction:
+
+Capacity Reservation = Reserve capacity
+
+Reserved Instance = Pricing commitment
