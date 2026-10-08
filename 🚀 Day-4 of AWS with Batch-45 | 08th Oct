@@ -1,0 +1,125 @@
+🎯 Easy interview definitions
+
+Remember these:
+
+EC2 → Virtual server
+
+AMI → Server template/image
+
+EBS → Persistent disk
+
+Snapshot → EBS backup
+
+Security Group → Firewall
+
+Key Pair → SSH authentication
+
+Elastic IP → Static public IP
+
+ENI → Virtual network card
+
+Load Balancer → Distributes traffic
+
+Target Group → Servers behind Load Balancer
+
+Auto Scaling → Automatically adds/removes servers
+
+Spot Instance → Discounted, interruptible EC2
+
+Reserved Instance → Long-term EC2 pricing commitment
+
+Capacity Reservation → Reserve EC2 capacity
+
+                    AWS
+                     |
+                    EC2
+                     |
+       ┌─────────────┼──────────────┐
+       ↓             ↓              ↓
+   Instances       Images       EBS Storage
+   Servers          AMI          Volumes
+                                 Snapshots
+       |
+       ↓
+Network & Security
+       |
+ ┌─────┼───────────┐
+ ↓     ↓           ↓
+SG   Key Pair     ENI
+ ↓
+Firewall
+       |
+       ↓
+Load Balancer
+       |
+       ↓
+Target Group
+       |
+ ┌─────┼─────┐
+ ↓     ↓     ↓
+EC2   EC2   EC2
+       ↑
+       |
+ Auto Scaling
+
+
+6. 📈 Auto Scaling
+
+Auto Scaling automatically adjusts the number of EC2 servers according to demand.
+
+Example:
+
+Normal traffic:
+
+EC2
+EC2
+
+Heavy traffic:
+
+EC2
+EC2
+EC2
+EC2
+EC2
+
+Traffic decreases:
+
+EC2
+EC2
+
+AWS can automatically add/remove instances.
+
+Simple Example
+
+Suppose your website normally needs:
+
+2 servers
+
+But during a sale:
+
+10,000 users
+
+Auto Scaling can do:
+
+2 EC2
+ ↓
+CPU becomes high
+ ↓
+Add EC2
+ ↓
+3 EC2
+ ↓
+4 EC2
+ ↓
+5 EC2
+
+After traffic decreases:
+
+5 EC2
+ ↓
+4 EC2
+ ↓
+3 EC2
+ ↓
+2 EC2
+
