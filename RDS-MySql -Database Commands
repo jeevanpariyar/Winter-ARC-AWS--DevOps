@@ -3,6 +3,83 @@ sudo apt update
 sudo apt upgrade -y    
 sudo apt install mysql-client
 mysql --version
+mysql -h endpoint -u admin -p  #(command to login into the database using endpoint URL and username and password.
 
 
-mysql -h endpoint -u admin -p
+#########################################  some MYSQL queries  ############################################
+
+                                                    1. Basic MySQL commands
+No.	Command	Purpose
+1	SHOW DATABASES;	Lists all databases
+2	CREATE DATABASE company;	Creates a database
+3	USE company;	Selects a database
+4	SHOW TABLES;	Lists tables in the selected database
+5	CREATE TABLE employees (id INT PRIMARY KEY, name VARCHAR(50), salary DECIMAL(10,2));	Creates a table
+6	DESCRIBE employees;	Shows table columns and data types
+7	INSERT INTO employees VALUES (1, 'Ram', 45000.00);	Inserts a record
+8	SELECT * FROM employees;	Retrieves all records
+9	SELECT name, salary FROM employees;	Retrieves specific columns
+10	UPDATE employees SET salary = 50000 WHERE id = 1;	Updates a record
+11	DELETE FROM employees WHERE id = 1;	Deletes a record
+12	SELECT * FROM employees WHERE salary > 40000;	Filters records
+13	SELECT * FROM employees ORDER BY salary DESC;	Sorts records by salary, highest first
+14	SELECT COUNT(*) FROM employees;	Counts total records
+15	SELECT name, salary FROM employees LIMIT 5;	Displays the first five records
+                   
+                                                      2. Mid-level MySQL commands
+
+These are especially useful for interviews and practical database troubleshooting.
+Command	Purpose
+SELECT DISTINCT salary FROM employees;	Returns unique salary values
+SELECT AVG(salary) FROM employees;	Calculates average salary
+SELECT MAX(salary) FROM employees;	Finds the highest salary
+SELECT MIN(salary) FROM employees;	Finds the lowest salary
+SELECT department, COUNT(*) FROM employees GROUP BY department;	Groups employees by department
+SELECT * FROM employees WHERE name LIKE 'R%';	Finds names starting with R
+ALTER TABLE employees ADD department VARCHAR(50);	Adds a new column
+SHOW CREATE TABLE employees;	Displays the table creation statement
+SELECT NOW();	Displays the current database server date and time
+SHOW PROCESSLIST;	Shows currently running MySQL sessions and queries
+
+                                                      3. Important commands for database support
+-- Check the MySQL version
+SELECT VERSION();
+
+-- Check the current database
+SELECT DATABASE();
+
+-- Check the logged-in MySQL user
+SELECT USER();
+
+-- Show database users and hosts (requires appropriate privileges)
+SELECT user, host FROM mysql.user;
+
+-- Check table indexes
+SHOW INDEX FROM employees;
+
+-- Check the current session's variables
+SHOW SESSION VARIABLES;
+
+
+4. Practice these commands in order
+Step 1: Create and select a database
+CREATE DATABASE company; → USE company;
+
+
+
+Step 2: Create and populate a table
+Use CREATE TABLE and INSERT INTO.
+
+
+
+Step 3: Retrieve and filter data
+Practice SELECT, WHERE, ORDER BY, and LIMIT.
+
+
+
+Step 4: Modify data safely
+Practice UPDATE and DELETE with a WHERE clause.
+
+
+
+Production tip: Always check your WHERE condition before running UPDATE or DELETE. Without it, you may modify or delete every row in the table. Use a transaction where appropriate.
