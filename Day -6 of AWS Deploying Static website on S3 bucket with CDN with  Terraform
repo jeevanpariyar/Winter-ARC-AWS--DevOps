@@ -33,4 +33,4 @@ Step 3 Run commands
 aws sts get-caller-identity
 terraform init                    terraform plan         terraform apply 
 
-Step 4 :- Terraform destroy 
+Step 4 :- Terraform destroy.
